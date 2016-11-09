@@ -45,7 +45,7 @@ var fontXL  = fontXXS*4.2
 var fontXXL = fontXXS*6.8
 // var banner     = 'https://user-assets.sharetribe.com/images/communities/cover_photos/31747/hd_header/conference_1.jpg?1476102178'
 var banner     = growth2
-var fontfamily = 'http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700&subset=latin-ext'
+var fontfamily = 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700&subset=latin-ext'
 var font       = 'Source Sans Pro, helvetica, sans-serif'
 /********************************************************************
   INIT
