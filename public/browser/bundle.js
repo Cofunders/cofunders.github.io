@@ -1,18 +1,3 @@
-(function () {
-  var socket = document.createElement('script')
-  var script = document.createElement('script')
-  socket.setAttribute('src', 'http://127.0.0.1:1337/socket.io/socket.io.js')
-  script.type = 'text/javascript'
-
-  socket.onload = function () {
-    document.head.appendChild(script)
-  }
-  script.text = ['window.socket = io("http://127.0.0.1:1337");',
-  'socket.on("bundle", function() {',
-  'console.log("livereaload triggered")',
-  'window.location.reload();});'].join('\n')
-  document.head.appendChild(socket)
-}());
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 var document = require('global/document')
 var hyperx = require('hyperx')
@@ -1846,7 +1831,7 @@ var fontXL  = fontXXS*4.2
 var fontXXL = fontXXS*6.8
 // var banner     = 'https://user-assets.sharetribe.com/images/communities/cover_photos/31747/hd_header/conference_1.jpg?1476102178'
 var banner     = growth2
-var fontfamily = 'http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700&subset=latin-ext'
+var fontfamily = 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700&subset=latin-ext'
 var font       = 'Source Sans Pro, helvetica, sans-serif'
 /********************************************************************
   INIT
