@@ -1814,7 +1814,7 @@ var growth2 = 'public/browser/6093abb706105b4fc25ede235187271f.jpg'
 // var growth6 = datauri(__dirname + '/assets/growth6.jpg')
 // var growth7 = datauri(__dirname + '/assets/growth7.jpg')
 // var growth8 = datauri(__dirname + '/assets/growth8.jpg')
-// var work1 = datauri(__dirname + '/assets/work1.jpg')
+var work1 = 'public/browser/2d3837cfc0d712ecdac1af0bcd5cddfc.jpg'
 /********************************************************************
   THEME
 ********************************************************************/
@@ -2294,7 +2294,6 @@ function portfolioComponent () {
       display           : flex;
       width             : 90%;
       height            : 400px;
-      background-color  : red;
       flex-direction    : row;
       justify-content   : center;
     }
@@ -2421,6 +2420,27 @@ function call2actionComponent () {
       width             : 100%;
       background-color  : violet;
     }
+    .title {
+
+    }
+    .description {
+
+    }
+    .calls {
+
+    }
+    .callInvestors {
+
+    }
+    .callEntrepreneurs {
+
+    }
+    .subtitle {
+
+    }
+    .subdescription {
+
+    }
     @media only screen and (max-width: 1270px) {
     }
     @media only screen and (max-width: 1200px) {
@@ -2441,7 +2461,29 @@ function call2actionComponent () {
   function template (data) {
     return yo`
       <div class=${css.call2action}>
-       ... call 2 action ...
+        <div class=${css.title}>
+          Why join CoFundersClub?
+        </div>
+        <div class=${css.description}>
+          The referral platform that connects investors and entrepreneurs
+        </div>
+        <div class=${css.calls}>
+          <div class=${css.callInvestors}>
+            <div class=${css.subtitle}>
+              For investors & Linkists
+            </div>
+            <div class=${css.subdescription}>
+              Find and connect the best startups with the necessary funding
+            </div>
+          </div>
+          <div class=${css.callEntrepreneurs}>
+            <div class=${css.subtitle}>
+              For entrepreneurs
+            </div>
+            <div class=${css.subdescription}>
+              Promote your startup to thousands of investors on your area.
+            </div>
+          </div>
       </div>
     `
   }
@@ -2454,12 +2496,38 @@ function call2actionComponent () {
 function testimonialsComponent () {
   var css = csjs`
     .testimonials {
-      flex-grow         : 1;
-      display           : flex;
-      flex-direction    : column;
-      align-items       : center;
-      width             : 100%;
-      background-color  : purple;
+      flex-grow           : 1;
+      display             : flex;
+      flex-direction      : column;
+      align-items         : center;
+      justify-content     : center;
+      width               : 100%;
+      height              : 500px;
+      background-image    : url(${work1});
+      background-size     : cover;
+      background-repeat   : no-repeat;
+      background-position : center;
+    }
+    .quote {
+      font-size           : ${fontXL}px;
+      font-weight         : 900;
+      font-style          : italic;
+      text-shadow:
+       -1px -1px 0 #fff,
+        1px -1px 0 #fff,
+        -1px 1px 0 #fff,
+         1px 1px 0 #fff;
+    }
+    .author {
+      font-size           : ${fontM}px;
+      font-weight         : 900;
+      font-style          : italic;
+      padding-left        : 50%;
+      text-shadow:
+       -1px -1px 0 #fff,
+        1px -1px 0 #fff,
+        -1px 1px 0 #fff,
+         1px 1px 0 #fff;
     }
     @media only screen and (max-width: 1270px) {
     }
@@ -2481,7 +2549,12 @@ function testimonialsComponent () {
   function template (data) {
     return yo`
       <div class=${css.testimonials}>
-       ... testimonials ...
+        <div class=${css.quote}>
+          "lorem ipsum doobeedoobeedooo"
+        </div>
+        <div class=${css.author}>
+          Dave Xu
+        </div>
       </div>
     `
   }
@@ -2503,6 +2576,26 @@ function footerComponent () {
       justify-content     : center;
       flex-direction      : column;
     }
+    .socialmedia {
+      display             : flex;
+      flex-direction      : row;
+      justify-content     : space-around;
+      margin-top          : 15px;
+      padding             : 10px;
+      width               : 300px;
+    }
+    .iconTwitter {
+      width               : 50px;
+      height              : 50px;
+    }
+    .iconFacebook {
+      width               : 50px;
+      height              : 50px;
+    }
+    .iconMail {
+      width               : 50px;
+      height              : 50px;
+    }
     @media only screen and (max-width: 1270px) {
     }
     @media only screen and (max-width: 1200px) {
@@ -2523,17 +2616,33 @@ function footerComponent () {
   function template (data) {
     return yo`
       <div class=${css.footer}>
-        lorem ipsum blabla bla m3h m3h lorem ipsum<br>
-        lorem ipsum blabla bla m3h m3h lorem ipsum<br>
-        lorem ipsum blabla bla m3h m3h lorem ipsum<br>
-        lorem ipsum blabla bla m3h m3h lorem ipsum<br>
-        lorem ipsum blabla bla m3h m3h lorem ipsum<br>
-        lorem ipsum blabla bla m3h m3h lorem ipsum<br>
-        lorem ipsum blabla bla m3h m3h lorem ipsum<br>
-        lorem ipsum blabla bla m3h m3h lorem ipsum<br>
-        lorem ipsum blabla bla m3h m3h lorem ipsum<br>
-        lorem ipsum blabla bla m3h m3h lorem ipsum<br>
-        lorem ipsum blabla bla m3h m3h lorem ipsum<br>
+        <div class=${css.socialmedia}>
+          <a href="#" class=${css.iconFacebook}>
+            <svg viewBox="-1 -1 114 114">
+              <g>
+              	<circle style="fill:#3B5998;" cx="56.098" cy="56.098" r="56.098"/>
+              	<path style="fill:#FFFFFF;" d="M70.201,58.294h-10.01v36.672H45.025V58.294h-7.213V45.406h7.213v-8.34   c0-5.964,2.833-15.303,15.301-15.303L71.56,21.81v12.51h-8.151c-1.337,0-3.217,0.668-3.217,3.513v7.585h11.334L70.201,58.294z"/>
+              </g>
+            </svg>
+          </a>
+          <a href="#" class=${css.iconTwitter}>
+            <svg viewBox="-1 -1 412 412">
+              <path style="fill:#76A9EA;" d="M403.632,74.18c-9.113,4.041-18.573,7.229-28.28,9.537c10.696-10.164,18.738-22.877,23.275-37.067  l0,0c1.295-4.051-3.105-7.554-6.763-5.385l0,0c-13.504,8.01-28.05,14.019-43.235,17.862c-0.881,0.223-1.79,0.336-2.702,0.336  c-2.766,0-5.455-1.027-7.57-2.891c-16.156-14.239-36.935-22.081-58.508-22.081c-9.335,0-18.76,1.455-28.014,4.325  c-28.672,8.893-50.795,32.544-57.736,61.724c-2.604,10.945-3.309,21.9-2.097,32.56c0.139,1.225-0.44,2.08-0.797,2.481  c-0.627,0.703-1.516,1.106-2.439,1.106c-0.103,0-0.209-0.005-0.314-0.015c-62.762-5.831-119.358-36.068-159.363-85.14l0,0  c-2.04-2.503-5.952-2.196-7.578,0.593l0,0C13.677,65.565,9.537,80.937,9.537,96.579c0,23.972,9.631,46.563,26.36,63.032  c-7.035-1.668-13.844-4.295-20.169-7.808l0,0c-3.06-1.7-6.825,0.485-6.868,3.985l0,0c-0.438,35.612,20.412,67.3,51.646,81.569  c-0.629,0.015-1.258,0.022-1.888,0.022c-4.951,0-9.964-0.478-14.898-1.421l0,0c-3.446-0.658-6.341,2.611-5.271,5.952l0,0  c10.138,31.651,37.39,54.981,70.002,60.278c-27.066,18.169-58.585,27.753-91.39,27.753l-10.227-0.006  c-3.151,0-5.816,2.054-6.619,5.106c-0.791,3.006,0.666,6.177,3.353,7.74c36.966,21.513,79.131,32.883,121.955,32.883  c37.485,0,72.549-7.439,104.219-22.109c29.033-13.449,54.689-32.674,76.255-57.141c20.09-22.792,35.8-49.103,46.692-78.201  c10.383-27.737,15.871-57.333,15.871-85.589v-1.346c-0.001-4.537,2.051-8.806,5.631-11.712c13.585-11.03,25.415-24.014,35.16-38.591  l0,0C411.924,77.126,407.866,72.302,403.632,74.18L403.632,74.18z"/>
+            </svg>
+          </a>
+          <a href="#" class=${css.iconMail}>
+            <svg viewBox="-1 -1 553 553">
+            	<g>
+            		<path style="fill:#76A9EA;" d="M501.613,491.782c12.381,0,23.109-4.088,32.229-12.16L377.793,323.567c-3.744,2.681-7.373,5.288-10.801,7.767    c-11.678,8.604-21.156,15.318-28.434,20.129c-7.277,4.822-16.959,9.737-29.045,14.755c-12.094,5.024-23.361,7.528-33.813,7.528    h-0.306h-0.306c-10.453,0-21.72-2.503-33.813-7.528c-12.093-5.018-21.775-9.933-29.045-14.755    c-7.277-4.811-16.75-11.524-28.434-20.129c-3.256-2.387-6.867-5.006-10.771-7.809L16.946,479.622    c9.119,8.072,19.854,12.16,32.234,12.16H501.613z"/>
+            		<path style="fill:#76A9EA;" d="M31.047,225.299C19.37,217.514,9.015,208.598,0,198.555V435.98l137.541-137.541    C110.025,279.229,74.572,254.877,31.047,225.299z"/>
+            		<path style="fill:#76A9EA;" d="M520.059,225.299c-41.865,28.336-77.447,52.73-106.75,73.195l137.486,137.492V198.555    C541.98,208.396,531.736,217.306,520.059,225.299z"/>
+            		<path style="fill:#76A9EA;" d="M501.613,59.013H49.181c-15.784,0-27.919,5.33-36.42,15.979C4.253,85.646,0.006,98.97,0.006,114.949    c0,12.907,5.636,26.892,16.903,41.959c11.267,15.061,23.256,26.891,35.961,35.496c6.965,4.921,27.969,19.523,63.012,43.801    c18.917,13.109,35.368,24.535,49.505,34.395c12.05,8.396,22.442,15.667,31.022,21.701c0.985,0.691,2.534,1.799,4.59,3.269    c2.215,1.591,5.018,3.61,8.476,6.107c6.659,4.816,12.191,8.709,16.597,11.683c4.4,2.975,9.731,6.298,15.985,9.988    c6.249,3.685,12.143,6.456,17.675,8.299c5.533,1.842,10.655,2.766,15.367,2.766h0.306h0.306c4.711,0,9.834-0.924,15.368-2.766    c5.531-1.843,11.42-4.608,17.674-8.299c6.248-3.69,11.572-7.02,15.986-9.988c4.406-2.974,9.938-6.866,16.598-11.683    c3.451-2.497,6.254-4.517,8.469-6.102c2.057-1.476,3.605-2.577,4.596-3.274c6.684-4.651,17.1-11.892,31.104-21.616    c25.482-17.705,63.01-43.764,112.742-78.281c14.957-10.447,27.453-23.054,37.496-37.803c10.025-14.749,15.051-30.22,15.051-46.408    c0-13.525-4.873-25.098-14.598-34.737C526.461,63.829,514.932,59.013,501.613,59.013z"/>
+            	</g>
+            </svg>
+          </a>
+        </div>
+        <hr style="width:50%; border-color: #999999;">
+        <br> Ⓒ 2016 CoFundersClub. All rights reserved <br><br><br>
       </div>
     `
   }
