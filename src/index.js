@@ -645,12 +645,15 @@ function call2actionComponent () {
       font-weight       : 700;
     }
     .calls {
+      margin            : 25px;
       display           : flex;
+      justify-content   : center;
       flex-direction    : row;
-      width             : 80%;
+      width             : 100%;
     }
     .action {
-      padding           : 20px;
+      min-width         : 200px;
+      margin            : 20px;
       display           : flex;
       flex-direction    : column;
       justify-content   : center;
@@ -659,7 +662,6 @@ function call2actionComponent () {
     .subtitle {
       font-size         : ${fontXXM}px;
       text-align        : center;
-
     }
     .subdescription {
       margin-top        : 15px;
@@ -690,12 +692,27 @@ function call2actionComponent () {
     @media only screen and (max-width: 1200px) {
     }
     @media only screen and (max-width: 1008px) {
+      .title {
+        font-size         : ${fontL}px;
+      }
+      .description {
+        font-size         : ${fontXM}px;
+      }
     }
     @media only screen and (max-width: 768px) {
+      .description {
+        font-size         : ${fontM}px;
+      }
     }
     @media only screen and (max-width: 660px) {
+      .calls {
+        flex-direction    : column;
+      }
     }
     @media only screen and (max-width: 600px) {
+      .description {
+        font-size         : ${fontXS}px;
+      }
     }
     @media only screen and (max-width: 480px) {
     }
@@ -771,8 +788,6 @@ function testimonialsComponent () {
     .author {
       font-size           : ${fontM}px;
       font-weight         : 900;
-      font-style          : italic;
-      padding-left        : 50%;
       text-shadow:
        -1px -1px 0 #fff,
         1px -1px 0 #fff,
@@ -786,12 +801,24 @@ function testimonialsComponent () {
     @media only screen and (max-width: 1008px) {
     }
     @media only screen and (max-width: 768px) {
+      .quote {
+        font-size           : ${fontL}px;
+      }
     }
     @media only screen and (max-width: 660px) {
     }
     @media only screen and (max-width: 600px) {
+      .quote {
+        font-size           : ${fontXXM}px;
+      }
     }
     @media only screen and (max-width: 480px) {
+      .quote {
+        font-size           : ${fontXM}px;
+      }
+      .author {
+        font-size           : ${fontS}px;
+      }
     }
     @media only screen and (max-width: 320px) {
     }
