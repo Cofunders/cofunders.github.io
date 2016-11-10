@@ -627,33 +627,63 @@ function portfolioComponent () {
 function call2actionComponent () {
   var css = csjs`
     .call2action {
+      padding-top       : 30px;
       flex-grow         : 1;
       display           : flex;
       flex-direction    : column;
       align-items       : center;
       width             : 100%;
-      background-color  : violet;
+      padding-bottom    : 30px;
     }
     .title {
-
+      font-size         : ${fontXL}px;
+      font-weight       : 700;
     }
     .description {
-
+      padding           : 10px;
+      font-size         : ${fontXXM}px;
+      font-weight       : 700;
     }
     .calls {
-
+      display           : flex;
+      flex-direction    : row;
+      width             : 80%;
     }
-    .callInvestors {
-
-    }
-    .callEntrepreneurs {
-
+    .action {
+      padding           : 20px;
+      display           : flex;
+      flex-direction    : column;
+      justify-content   : center;
+      align-items       : center;
     }
     .subtitle {
+      font-size         : ${fontXXM}px;
+      text-align        : center;
 
     }
     .subdescription {
-
+      margin-top        : 15px;
+      font-size         : ${fontS}px;
+      text-align        : center;
+    }
+    .button {
+      display             : flex;
+      align-items         : center;
+      justify-content     : center;
+      margin-top          : 15px;
+      padding             : 10px;
+      background-color    : ${darkred};
+      color               : ${smokewhite};
+      font-size           : ${fontXS}px;
+      font-weight         : 700;
+      width               : 150px;
+      border-radius       : 50px;
+      text-decoration     : none;
+      transition          : all 0.5s ease;
+    }
+    .button:hover {
+      background-color    : ${smokewhite};
+      color               : ${darkred};
     }
     @media only screen and (max-width: 1270px) {
     }
@@ -682,20 +712,26 @@ function call2actionComponent () {
           The referral platform that connects investors and entrepreneurs
         </div>
         <div class=${css.calls}>
-          <div class=${css.callInvestors}>
+          <div class=${css.action}>
             <div class=${css.subtitle}>
               For investors & Linkists
             </div>
             <div class=${css.subdescription}>
               Find and connect the best startups with the necessary funding
             </div>
+            <div class=${css.button}>
+              Become a Linkist
+            </div>
           </div>
-          <div class=${css.callEntrepreneurs}>
+          <div class=${css.action}>
             <div class=${css.subtitle}>
               For entrepreneurs
             </div>
             <div class=${css.subdescription}>
               Promote your startup to thousands of investors on your area.
+            </div>
+            <div class=${css.button}>
+              Promote your startup
             </div>
           </div>
       </div>
