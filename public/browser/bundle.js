@@ -1803,22 +1803,24 @@ var minixhr = require('minixhr')
 // var growth7 = urify(path.join(__dirname, '/assets/growth7.jpg'))
 // var growth8 = urify(path.join(__dirname, '/assets/growth8.jpg'))
 // var work1 = urify(path.join(__dirname, '/assets/work1.jpg'))
-var collaborate1 = 'public/browser/d577a460458800bb1195b0acb25fc189.jpg'
-var growth1 = 'public/browser/6846f40d5ce7daaa382b36bf132f04e3.jpg'
+var consumers = 'public/browser/4b1a0065d5701e437324538a449723a1.jpg'
+var enterprise = 'public/browser/75f983bc840f8b006a11a30e93f59298.jpg'
+// var collaborate1 = datauri(__dirname + '/assets/collaborate1.jpg')
+// var growth1 = datauri(__dirname + '/assets/growth1.jpg')
 var growth2 = 'public/browser/6093abb706105b4fc25ede235187271f.jpg'
-var growth3 = 'public/browser/dfe456608c8568a007cc49271f09e894.jpg'
-var growth4 = 'public/browser/9e563c8136549d83a3d527803a45b937.jpg'
-var growth5 = 'public/browser/0ef2aadfd48f3194f40b2bb8e741ac73.jpg'
-var growth6 = 'public/browser/b2c87987cfe00e459c1d0801808b3151.jpg'
-var growth7 = 'public/browser/2544e2b9b9ebbc3007f68794baf3335f.jpg'
-var growth8 = 'public/browser/c44361e4f8c8dc1790e2edf301229afc.jpg'
-var work1 = 'public/browser/2d3837cfc0d712ecdac1af0bcd5cddfc.jpg'
+// var growth3 = datauri(__dirname + '/assets/growth3.jpg')
+// var growth4 = datauri(__dirname + '/assets/growth4.jpg')
+// var growth5 = datauri(__dirname + '/assets/growth5.jpg')
+// var growth6 = datauri(__dirname + '/assets/growth6.jpg')
+// var growth7 = datauri(__dirname + '/assets/growth7.jpg')
+// var growth8 = datauri(__dirname + '/assets/growth8.jpg')
+// var work1 = datauri(__dirname + '/assets/work1.jpg')
 /********************************************************************
   THEME
 ********************************************************************/
 var darkred    = '#80030b' // buttons
 var darkgrey   = '#3c3c3c' // font
-var lightgrey  = '#7a7d80'
+var grey       = '#7a7d80'
 var smokewhite = '#efefef'
 var fontXXS = '10'
 var fontXS  = fontXXS*1.3
@@ -2206,7 +2208,7 @@ function pitchComponent () {
           How CofundersClub works
         </div>
         <div class=${css.description}>
-          Making Profit in three easy steps
+          Earn a commission in three easy steps
         </div>
         <div class=${css.steps}>
           <div class=${css.step}>
@@ -2235,7 +2237,7 @@ function pitchComponent () {
               2. Connect an Investor
             </div>
             <div class=${css.subdescription}>
-              Invite an Investor to meet and fund the startup
+              Invite an Investor to fund the startup
             </div>
           </div>
           <div class=${css.step}>
@@ -2251,7 +2253,7 @@ function pitchComponent () {
             </div>
             <div class=${css.subdescription}>
               Once an investment happens, you earn a commission for connecting
-              the startup with the investor!
+              the startup with an investor!
             </div>
           </div>
         </div>
@@ -2272,22 +2274,80 @@ function portfolioComponent () {
       flex-direction    : column;
       align-items       : center;
       width             : 100%;
-      background-color  : lightgreen;
+      background-color  : black;
     }
     .title {
-
+      margin-top        : 50px;
+      padding           : 5px;
+      font-size         : ${fontXL}px;
+      font-weight       : 900;
+      color             : ${smokewhite};
     }
     .description {
-
+      padding           : 20px;
+      font-size         : ${fontXM}px;
+      font-weight       : 500;
+      color             : ${smokewhite};
     }
     .categories {
-
+      margin            : 50px;
+      display           : flex;
+      width             : 50%;
+      height            : 400px;
+      flex-direction    : row;
+      justify-content   : center;
     }
     .card {
-
+      flex-grow           : 1;
+      margin              : 10px;
+      display             : flex;
+      align-items         : center;
+      justify-content     : center;
+      background-size     : cover;
+      background-repeat   : no-repeat;
+      background-position : center;
+      min-width           : 500px;
+      color               : ${smokewhite};
+      text-decoration     : none;
+      font-size           : ${fontM}px;
+      font-weight         : 900;
+      text-shadow:
+       -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+         1px 1px 0 #000;
+    }
+    .card_hover {
+      position            : relative;
+      color               : ${darkred};
+    }
+    .card_hover::after {
+      position            : absolute;
+      content             : '';
+      top                 : 0;
+      left                : 0;
+      width               : 100%;
+      height              : 100%;
+      background-color    : ${smokewhite};
+      opacity             : .3;
     }
     .button {
-
+      display             : flex;
+      align-items         : center;
+      justify-content     : center;
+      margin-bottom       : 40px;
+      padding             : 20px;
+      background-color    : ${darkred};
+      color               : ${smokewhite};
+      font-size           : ${fontS}px;
+      font-weight         : 700;
+      width               : 150px;
+      border-radius       : 50px;
+      text-decoration     : none;
+    }
+    .button:hover {
+      background-color    : ${smokewhite};
+      color               : ${darkred};
     }
     @media only screen and (max-width: 1270px) {
     }
@@ -2307,6 +2367,7 @@ function portfolioComponent () {
     }
   `
   function template (data) {
+    function hover () { this.classList.toggle(css.card_hover) }
     return yo`
       <div class=${css.portfolio}>
         <div class=${css.title}>
@@ -2316,14 +2377,14 @@ function portfolioComponent () {
           Check some of the startups offered by our vetted professionals
         </div>
         <div class=${css.categories}>
-          <a class=${css.card} href="https://www.cofunders.club/en?category=xiao-fei-ying-yong&view=list">
+          <a onmouseover=${hover} onmouseout=${hover} class=${css.card} style="background-image:url(${consumers})" href="https://www.cofunders.club/en?category=xiao-fei-ying-yong&view=list">
             Consumers
           </a>
-          <a class=${css.card} href="https://www.cofunders.club/en?category=enterprise&view=list">
+          <a onmouseover=${hover} onmouseout=${hover} class=${css.card} style="background-image:url(${enterprise});" href="https://www.cofunders.club/en?category=enterprise&view=list">
             Enterprise
           </a>
         </div>
-        <a href="https://www.cofunders.club/en?category=all&view=list"> Browse all </a>
+        <a class=${css.button} href="https://www.cofunders.club/en?category=all&view=list"> Browse all </a>
       </div>
     `
   }
