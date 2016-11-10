@@ -506,8 +506,9 @@ function portfolioComponent () {
     .categories {
       margin            : 50px;
       display           : flex;
-      width             : 50%;
+      width             : 90%;
       height            : 400px;
+      background-color  : red;
       flex-direction    : row;
       justify-content   : center;
     }
@@ -520,7 +521,6 @@ function portfolioComponent () {
       background-size     : cover;
       background-repeat   : no-repeat;
       background-position : center;
-      min-width           : 500px;
       color               : ${smokewhite};
       text-decoration     : none;
       font-size           : ${fontM}px;
@@ -530,6 +530,7 @@ function portfolioComponent () {
         1px -1px 0 #000,
         -1px 1px 0 #000,
          1px 1px 0 #000;
+      transition          : all 0.5s ease;
     }
     .card_hover {
       position            : relative;
@@ -558,6 +559,7 @@ function portfolioComponent () {
       width               : 150px;
       border-radius       : 50px;
       text-decoration     : none;
+      transition          : all 0.5s ease;
     }
     .button:hover {
       background-color    : ${smokewhite};
@@ -568,12 +570,27 @@ function portfolioComponent () {
     @media only screen and (max-width: 1200px) {
     }
     @media only screen and (max-width: 1008px) {
+      .title {
+        font-size        : ${fontL}px;
+      }
+      .description {
+        font-size        : ${fontM}px;
+      }
     }
     @media only screen and (max-width: 768px) {
+      .categories {
+        flex-direction    : column;
+      }
     }
     @media only screen and (max-width: 660px) {
     }
     @media only screen and (max-width: 600px) {
+      .title {
+        font-size        : ${fontXM}px;
+      }
+      .description {
+        font-size        : ${fontXS}px;
+      }
     }
     @media only screen and (max-width: 480px) {
     }
