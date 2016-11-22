@@ -1966,8 +1966,8 @@ function headerComponent () {
   function template (data) {
     return yo`
       <div class=${css.header}>
-        <div class=${css.title}>Referrals for Rewards</div>
-        <div class=${css.subtitle}>Raise Capital in 10X Speed</div>
+        <div class=${css.title}>Rewards for Referrals</div>
+        <div class=${css.subtitle}>Bring investors on board</div>
         ${search}
       </div>
     `
